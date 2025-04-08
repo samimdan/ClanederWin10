@@ -5,17 +5,180 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Claneder"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="850" Width="200"
         AllowsTransparency="True" 
         WindowStyle="None" 
-        Background="Transparent">
-    
-        <Grid>
+        
+        Background="#01ffffff"
+         MouseDown="Grid_MouseDown"
+        >
+    <Grid x:Name="RootGrid"   VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions >
+        <Grid Grid.Row="0" Background="Transparent" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
 
-        <TextBlock Text="Hello Blur!" 
-                   HorizontalAlignment="Center" 
-                   VerticalAlignment="Center" 
-                   FontSize="30"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1"
+                  >
+
+                <Grid 
+                          HorizontalAlignment="Stretch"
+                         VerticalAlignment="Center"
+                          
+                          >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" x:Name="HourTb"  VerticalAlignment="Center" HorizontalAlignment="Center"  FontStyle="Normal" FontWeight="400" FontFamily="/Assets/Fonts/BigShouldersStencil.ttf#Big Shoulders Stencil Thin"  FontSize="70"  />
+
+                    <TextBlock Grid.Row="1" x:Name="MinuteTb"  VerticalAlignment="Bottom" FontFamily="/Assets/Fonts/BigShouldersStencil.ttf#Big Shoulders Stencil Thin" HorizontalAlignment="Center"  FontSize="35" FontWeight="400" />
+                    <TextBlock Grid.Row="2" x:Name="SecondTb"  VerticalAlignment="Bottom" FontFamily="/Assets/Fonts/BigShouldersStencil.ttf#Big Shoulders Stencil Thin" HorizontalAlignment="Center" FontSize="25"  FontWeight="400" Opacity="1"  />
+
+
+                    <Grid.Resources>
+                       
+                    </Grid.Resources>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="0" VerticalAlignment="Top" 
+                  HorizontalAlignment="Stretch" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="128" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" x:Name="WeatherIcon"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="128" Height="128" Stretch="Uniform" Margin="2"/>
+
+                <TextBlock Grid.Row="1" x:Name="DayNumTb"  VerticalAlignment="Center" HorizontalAlignment="Center"  FontStyle="Normal" FontWeight="400" FontFamily="/Assets/Fonts/Roboto.ttf#Roboto"  FontSize="60"  />
+                <TextBlock Grid.Row="2" x:Name="DayOfWeekTb"   VerticalAlignment="Center" HorizontalAlignment="Center"   FontStyle="Normal" FontWeight="900" FontFamily="/Assets/Fonts/IRANSansX-Regular.ttf#IRANSansX"  FontSize="15" />
+                <TextBlock Grid.Row="3" x:Name="MonthTb"  VerticalAlignment="Bottom" HorizontalAlignment="Center"  FontStyle="Normal" FontWeight="900" FontFamily="/Assets/Fonts/IRANSansX-Regular.ttf#IRANSansX"  FontSize="13"  />
+
+            </Grid>
+
+
+        </Grid>
+
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center"  Margin=" 0,20" >
+
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Path x:Name="DegreeIcon" Width="25" Height="25" Fill="#ff8904" Data="M13,17c0-.8389.5176-1.5547,1.25-1.8517V5c0-.4141.3359-.75.75-.75s.75.3359.75.75v10.1483c.7324.2969,1.25,1.0128,1.25,1.8517,0,1.1046-.8954,2-2,2s-2-.8954-2-2ZM3.25,4c0-1.5166,1.2334-2.75,2.75-2.75s2.75,1.2334,2.75,2.75-1.2334,2.75-2.75,2.75-2.75-1.2334-2.75-2.75ZM4.75,4c0,.6895.5605,1.25,1.25,1.25s1.25-.5605,1.25-1.25-.5605-1.25-1.25-1.25-1.25.5605-1.25,1.25ZM9.25,17c0-1.6777.7246-3.2373,2-4.3359v-7.6641c0-2.0674,1.6826-3.75,3.75-3.75s3.75,1.6826,3.75,3.75v7.6641c1.2754,1.0986,2,2.6582,2,4.3359,0,3.1709-2.5791,5.75-5.75,5.75s-5.75-2.5791-5.75-5.75ZM10.75,17c0,2.3438,1.9062,4.25,4.25,4.25s4.25-1.9062,4.25-4.25c0-1.3301-.6201-2.5615-1.7021-3.3789-.1875-.1416-.2979-.3633-.2979-.5986V5c0-1.2402-1.0098-2.25-2.25-2.25s-2.25,1.0098-2.25,2.25v8.0225c0,.2354-.1104.457-.2979.5986-1.082.8174-1.7021,2.0488-1.7021,3.3789Z">
+                    <Path.RenderTransform>
+                        <ScaleTransform  ScaleX="1.2" ScaleY="1.2"/>
+                    </Path.RenderTransform>
+                </Path>
+                <TextBlock x:Name="TempTb"  VerticalAlignment="Center" HorizontalAlignment="Center"  FontStyle="Normal" FontWeight="400" FontFamily="/Assets/Fonts/Roboto.ttf#Roboto" Margin="12,20,0,0" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top"  Margin="10,0,10,0" >
+                <Path x:Name="HumidityPath"  Width="25" Height="25" Fill="#8ec5ff" Data="M17,17c0,1.1046-.8954,2-2,2s-2-.8954-2-2c0-.8389.5176-1.5547,1.25-1.8517V5c0-.4141.3359-.75.75-.75s.75.3359.75.75v10.1483c.7324.2969,1.25,1.0128,1.25,1.8517ZM20.75,17c0,3.1709-2.5791,5.75-5.75,5.75s-5.75-2.5791-5.75-5.75c0-1.6777.7241-3.2373,2-4.3359v-7.6641c0-2.0674,1.6821-3.75,3.75-3.75s3.75,1.6826,3.75,3.75v7.6641c1.2754,1.0986,2,2.6582,2,4.3359ZM19.25,17c0-1.3301-.6201-2.5615-1.7021-3.3789-.1875-.1416-.2979-.3633-.2979-.5986V5c0-1.2402-1.0098-2.25-2.25-2.25s-2.25,1.0098-2.25,2.25v8.0225c0,.2354-.1104.457-.2979.5986-1.0815.8174-1.7021,2.0488-1.7021,3.3789,0,2.3438,1.9067,4.25,4.25,4.25s4.25-1.9062,4.25-4.25ZM8.5908,4.7812c.2354.4033.3594.8633.3594,1.3291,0,1.4551-1.1841,2.6396-2.6396,2.6396h-.4214c-1.4551,0-2.6392-1.1846-2.6392-2.6396,0-.4658.124-.9258.3594-1.3291l1.8428-3.1592c.2686-.4609,1.0273-.4609,1.2959,0l1.8428,3.1592ZM7.4502,6.1104c0-.2012-.0537-.3994-.1553-.5732l-1.1948-2.0488-1.1948,2.0488c-.1016.1738-.1553.3721-.1553.5732,0,.6279.5112,1.1396,1.1392,1.1396h.4214c.6284,0,1.1396-.5117,1.1396-1.1396Z">
+                    <Path.RenderTransform>
+                        <ScaleTransform  ScaleX="1.2" ScaleY="1.2"/>
+                    </Path.RenderTransform>
+                </Path>
+                <TextBlock x:Name="HumidityTb"  VerticalAlignment="Center" HorizontalAlignment="Center"  FontStyle="Normal" FontWeight="400" FontFamily="/Assets/Fonts/Roboto.ttf#Roboto" Margin="9,20,0,0" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,0,10,0" >
+                <Path x:Name="WindPath"  VerticalAlignment="Center" HorizontalAlignment="Center"  Width="25" Height="25" Fill="White" Data="M3.75,2v20c0,.4141-.3359.75-.75.75s-.75-.3359-.75-.75V2c0-.4141.3359-.75.75-.75s.75.3359.75.75ZM21.75,6.8086v2.3828c0,.8203-.582,1.5391-1.3838,1.7109l-11.9995,2.5723c-.1226.0264-.2461.0391-.3687.0391-.397,0-.7832-.1348-1.0986-.3906-.4126-.334-.6494-.8291-.6494-1.3604v-7.5254c0-.5312.2368-1.0264.6494-1.3604.4131-.334.9497-.4629,1.4663-.3516l12.001,2.5723c.8018.1719,1.3833.8916,1.3833,1.7109ZM11.25,4.6777l-3.1978-.6855c-.0186-.0039-.0366-.0059-.0537-.0059-.0732,0-.1274.0332-.1558.0566-.0347.0273-.0928.0908-.0928.1943v7.5254c0,.1035.0581.167.0928.1943.0352.0293.1069.0732.2104.0508l3.1968-.6853v-6.6448ZM15.25,5.5351l-2.5-.5359v6.0018l2.5-.5359v-4.9299ZM20.25,6.8086c0-.1172-.083-.2197-.1973-.2441h-.0005l-3.3022-.7078v4.2868l3.3022-.7079c.1147-.0244.1978-.127.1978-.2441v-2.3828Z">
+                    <Path.RenderTransform>
+                        <ScaleTransform  ScaleX="1.2" ScaleY="1.2"/>
+                    </Path.RenderTransform>
+                </Path>
+                <TextBlock x:Name="WindTb"  VerticalAlignment="Center" HorizontalAlignment="Center"  FontStyle="Normal" FontWeight="400" FontFamily="/Assets/Fonts/Roboto.ttf#Roboto" Margin="0,20,0,0"   />
+
+
+
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,0,10,0" >
+                <Path x:Name="UvPath"  Width="25" Height="25" Fill="#ffb900" Data="M9,17c0,1.1046-.8954,2-2,2s-2-.8954-2-2c0-.8389.5176-1.5547,1.25-1.8517V5c0-.4141.3359-.75.75-.75s.75.3359.75.75v10.1483c.7324.2969,1.25,1.0128,1.25,1.8517ZM12.75,17c0,3.1709-2.5796,5.75-5.75,5.75s-5.75-2.5791-5.75-5.75c0-1.6777.7241-3.2373,2-4.3359v-7.6641c0-2.0674,1.6821-3.75,3.75-3.75s3.75,1.6826,3.75,3.75v7.6641c1.2759,1.0986,2,2.6582,2,4.3359ZM11.25,17c0-1.3301-.6206-2.5615-1.7021-3.3789-.1875-.1416-.2979-.3633-.2979-.5986V5c0-1.2402-1.0093-2.25-2.25-2.25s-2.25,1.0098-2.25,2.25v8.0225c0,.2354-.1104.4561-.2979.5986-1.0815.8174-1.7021,2.0498-1.7021,3.3789,0,2.3438,1.9067,4.25,4.25,4.25s4.25-1.9062,4.25-4.25ZM14,6.3496c.4141,0,.75-.3359.75-.75v-1.5996c0-.4141-.3359-.75-.75-.75s-.75.3359-.75.75v1.5996c0,.4141.3359.75.75.75ZM18.5254,8.2246c.1919,0,.3838-.0732.5303-.2197l1.1313-1.1318c.293-.293.293-.7676,0-1.0605s-.7676-.293-1.0605,0l-1.1313,1.1318c-.293.293-.293.7676,0,1.0605.1465.1465.3384.2197.5303.2197ZM22,11.25h-1.6001c-.4141,0-.75.3359-.75.75s.3359.75.75.75h1.6001c.4141,0,.75-.3359.75-.75s-.3359-.75-.75-.75ZM19.0557,15.9951c-.293-.293-.7676-.293-1.0605,0s-.293.7676,0,1.0605l1.1313,1.1318c.1465.1465.3384.2197.5303.2197s.3838-.0732.5303-.2197c.293-.293.293-.7676,0-1.0605l-1.1313-1.1318ZM14,17.6504c-.0118,0-.0216.0062-.0333.0067-.0814.8691-.3267,1.6895-.6976,2.4377.0486.3672.3504.6552.7308.6552.4141,0,.75-.3359.75-.75v-1.5996c0-.4141-.3359-.75-.75-.75ZM14,8.0498c-.7328,0-1.4112.214-2,.5631v1.9805c.4439-.6292,1.1732-1.0436,2-1.0436,1.3511,0,2.4502,1.0996,2.4502,2.4502s-1.0991,2.4502-2.4502,2.4502c-.1733,0-.3415-.0234-.5067-.058.2004.4949.3372,1.0154.4187,1.5505.0295.0007.0584.0075.088.0075,2.1782,0,3.9502-1.7725,3.9502-3.9502s-1.772-3.9502-3.9502-3.9502Z">
+                    <Path.RenderTransform>
+                        <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                    </Path.RenderTransform>
+                </Path>
+
+                <TextBlock x:Name="UvTb"  VerticalAlignment="Center" HorizontalAlignment="Center"  FontStyle="Normal" FontWeight="400" FontFamily="/Assets/Fonts/Roboto.ttf#Roboto"  Margin="0,20,4,0"  />
+
+
+
+
+            </StackPanel>
+
+        </StackPanel>
+
+        <TextBlock  Grid.Row="1" x:Name="WeatherDescriptionTb" FontFamily="/Assets/Fonts/Roboto.ttf#Roboto"  FontSize="10" Opacity="0.7" TextWrapping="Wrap"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,0"/>
+
+        <Line Grid.Row="0" Stroke="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Opacity="0.1"
+              X1="0" Y1="0"
+              X2="150" Y2="0"
+              StrokeThickness="3"/>
+        <StackPanel Grid.Row="2" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="0,30,0,0" >
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center"  >
+                <TextBlock x:Name="MorningHolyHourTb"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"  FontStyle="Normal" FontWeight="400" FontFamily="/Assets/Fonts/Roboto.ttf#Roboto" />
+                <TextBlock Tag="Blinking" Text=":"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"   FontStyle="Normal" FontWeight="400" FontFamily="/Assets/Fonts/Roboto.ttf#Roboto" Opacity="1" />
+                <TextBlock x:Name="MorningHolyMinTb"  VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="20"  FontStyle="Normal" FontWeight="400" FontFamily="/Assets/Fonts/Roboto.ttf#Roboto" />
+                <TextBlock x:Name="MorningIcon" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontFamily="/Assets/Fonts/Weather.ttf#icomoon" Foreground="#00a6f4" Text="&#xe94b;" Margin="110,0,0,0" />
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
+
+                <TextBlock x:Name="EveningHolyHourTb"  VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="20"  FontStyle="Normal" FontWeight="400" FontFamily="/Assets/Fonts/Roboto.ttf#Roboto" Margin="0,10,0,10"/>
+                <TextBlock Tag="Blinking" Text=":" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center"  FontStyle="Normal" FontWeight="400" FontFamily="/Assets/Fonts/Roboto.ttf#Roboto" />
+                <TextBlock x:Name="EveningHolyMinTb"  VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="20"  FontStyle="Normal" FontWeight="400" FontFamily="/Assets/Fonts/Roboto.ttf#Roboto" />
+                <TextBlock x:Name="EveningIcon" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="30" FontFamily="/Assets/Fonts/Weather.ttf#icomoon" Foreground="#ffdf20" Text="&#xe925;" Margin="110,0,0,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
+
+                <TextBlock x:Name="AfterNoonHolyHourTb"  VerticalAlignment="Center" HorizontalAlignment="Center"   FontSize="20" FontStyle="Normal" FontWeight="400" FontFamily="/Assets/Fonts/Roboto.ttf#Roboto" />
+                <TextBlock Tag="Blinking" Text=":" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"  FontStyle="Normal" FontWeight="400" FontFamily="/Assets/Fonts/Roboto.ttf#Roboto" />
+                <TextBlock x:Name="AfterNoonHolyMinTb"  VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="20"  FontStyle="Normal" FontWeight="400" FontFamily="/Assets/Fonts/Roboto.ttf#Roboto" />
+                <TextBlock x:Name="AfterNoonIcon" Foreground="#ff6900"  FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/Assets/Fonts/Weather.ttf#icomoon" Text="&#xe930;" Margin="110,0,0,0" />
+
+
+
+            </StackPanel>
+
+        </StackPanel>
+        <Line Grid.Row="1" Stroke="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Opacity="0.1"
+              X1="0" Y1="0"
+              X2="150" Y2="0"
+              StrokeThickness="3"/>
+        <StackPanel Grid.Row="3" x:Name="ChdataSp" Background="Transparent" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="40" >
+
+            <TextBlock Tag="Blinking" x:Name="TodayChDateTb" FontSize="25" FontFamily="/Assets/Fonts/BigShouldersStencil.ttf#Big Shoulders Stencil Thin" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock x:Name="MonthChDateTb" FontSize="25" FontFamily="/Assets/Fonts/BigShouldersStencil.ttf#Big Shoulders Stencil Thin"/>
+                <TextBlock Tag="Blinking" Text="-" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" FontStyle="Normal" FontWeight="400" FontFamily="/Assets/Fonts/Roboto.ttf#Roboto" Opacity="1"/>
+                <TextBlock x:Name="MonthChDateTextTb" FontSize="25" FontFamily="/Assets/Fonts/BigShouldersStencil.ttf#Big Shoulders Stencil Thin"/>
+            </StackPanel>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="4" Orientation="Vertical"   VerticalAlignment="Center"  HorizontalAlignment="Center" >
+            <!-- Replace ToggleSwitch with a CheckBox for compatibility -->
+            <StackPanel Grid.Row="4" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <CheckBox x:Name="TimerSwitch" Content="Do work" IsChecked="False" Checked="TimerToggled" Unchecked="TimerToggled" />
+                    <Button x:Name="ResetTimer" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Reset"  />
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+
     </Grid>
-   
+
 </Window>

@@ -3,17 +3,15 @@ using System.Runtime.InteropServices;
 using System.Windows.Interop;
 using System.Windows;
 
-namespace Claneder;
-/// <summary>
-/// Provides utility methods for modifying the appearance of WPF windows.
-/// </summary>
-public class WindowAppearanceUtilities
+namespace WindowAppearanceUtilities;
+
+ public class WindowAppearanceUtilities
 {
     /// <summary>
     /// Enables the blur effect on the specified WPF window.
     /// </summary>
     /// <param name="window">The WPF window on which to enable the blur effect.</param>
-    public static void EnableBlur(Window window)
+    public void EnableBlur(Window window)
     {
         var windowHelper = new WindowInteropHelper(window);
         var accent = new AccentPolicy
@@ -41,7 +39,7 @@ public class WindowAppearanceUtilities
     /// Sets the specified WPF window to always stay on top of other windows.
     /// </summary>
     /// <param name="window">The WPF window to set as topmost.</param>
-    public static void SetWindowTopMost(Window window)
+    public void SetWindowTopMost(Window window)
     {
         var windowHelper = new WindowInteropHelper(window);
         SetWindowPos(windowHelper.Handle, WindowZOrder.TOPMOST, 0, 0, 0, 0, WindowPositionFlags.NOMOVE | WindowPositionFlags.NOSIZE);
@@ -113,4 +111,5 @@ public class WindowAppearanceUtilities
     {
         WCA_ACCENT_POLICY = 19
     }
+
 }
