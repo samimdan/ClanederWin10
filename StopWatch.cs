@@ -2,6 +2,8 @@
 
 using System.Diagnostics;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Threading;
 
 #endregion
 
@@ -13,22 +15,34 @@ public sealed partial class MainWindow : Window
     private static Stopwatch _stopwatch = new();
     private Thread _worker;
 
-    private void TimerToggled(object sender, RoutedEventArgs e)
+    // Assuming StopWatchTimerTb is a TextBlock control
+
+
+    private void TimerToggled(object sender, RoutedEventArgs e,bool timerToggled)
     {
         _worker = new Thread(WorkTimer);
-        _worker.Start();
-        _stopwatch.Start();
-
-
-        ResumeThread();
+        switch (timerToggled)
+        {
+            case true:
+                SuspendThread();
+                _stopwatch.Stop();
+                break;
+            case false:
+                _worker.Start();
+                _stopwatch.Start();
+                ResumeThread();
+                break;
+        }
     }
-
+    private void TimerRestart(object sender, RoutedEventArgs e)
+    {
+        _stopwatch.Reset();
+        StopWatchTimerTb.Text = "00:00:00";
+    }
     private void TimerToggledOff(object sender, RoutedEventArgs e)
     {
-        SuspendThread();
-        _stopwatch.Stop();
+      
     }
-
 
     private void WorkTimer()
     {
@@ -37,6 +51,10 @@ public sealed partial class MainWindow : Window
             _suspendEvent.WaitOne();
             // Add your timer logic here  
             Thread.Sleep(1000); // Simulate work  
+            Dispatcher.Invoke(() =>
+            {
+                StopWatchTimerTb.Text = _stopwatch.Elapsed.ToString("hh\\:mm\\:ss");
+            });
         }
     }
 

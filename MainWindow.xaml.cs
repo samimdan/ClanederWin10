@@ -21,18 +21,25 @@ namespace Claneder
         public MainWindow()
         {
             InitializeComponent();
-            this.Loaded += MainWindow_Loaded;
+            this.Loaded +=    MainWindow_Loaded;
             
+            TimerStart();
+            PopulateDateInfo();
+            //StartBlinking("Blinking");
+            PopulateWeatherInfo();
         }
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
-            Console.WriteLine("MouseDown");
+       
             if (e.ChangedButton == MouseButton.Left)
             {
                 this.DragMove();
             }
         }
 
+      
+
+       
     }
 }

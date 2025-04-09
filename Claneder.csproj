@@ -8,4 +8,89 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Assets\Fonts\BigShouldersStencil.ttf" />
+    <None Remove="Assets\Fonts\IRANSansX-Regular.ttf" />
+    <None Remove="Assets\Fonts\Roboto-Italic-VariableFont_wdth,wght.ttf" />
+    <None Remove="Assets\Fonts\Roboto.ttf" />
+    <None Remove="Assets\Fonts\Weather.ttf" />
+    <None Remove="Assets\weather\moon.png" />
+    <None Remove="Assets\weather\moon_blizzard.png" />
+    <None Remove="Assets\weather\moon_clouds.png" />
+    <None Remove="Assets\weather\moon_fog.png" />
+    <None Remove="Assets\weather\moon_lighting.png" />
+    <None Remove="Assets\weather\moon_rain.png" />
+    <None Remove="Assets\weather\moon_rain_snow.png" />
+    <None Remove="Assets\weather\NA_blizzard.png" />
+    <None Remove="Assets\weather\NA_clouds.png" />
+    <None Remove="Assets\weather\NA_fog.png" />
+    <None Remove="Assets\weather\NA_lighting.png" />
+    <None Remove="Assets\weather\NA_rain.png" />
+    <None Remove="Assets\weather\NA_rain_snow.png" />
+    <None Remove="Assets\weather\sun.png" />
+    <None Remove="Assets\weather\sun_blizzard.png" />
+    <None Remove="Assets\weather\sun_clouds.png" />
+    <None Remove="Assets\weather\sun_fog.png" />
+    <None Remove="Assets\weather\sun_lighting.png" />
+    <None Remove="Assets\weather\sun_rain.png" />
+    <None Remove="Assets\weather\sun_rain_snow.png" />
+    <None Remove="Azan.wav" />
+    <None Remove="Hour.mp3" />
+    <None Remove="Sounds\Azan.wav" />
+    <None Remove="Sounds\Hour.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Sounds\Azan.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Hour.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.12.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Fonts\BigShouldersStencil.ttf" />
+    <Resource Include="Assets\Fonts\IRANSansX-Regular.ttf" />
+    <Resource Include="Assets\Fonts\Roboto-Italic-VariableFont_wdth,wght.ttf" />
+    <Resource Include="Assets\Fonts\Roboto.ttf" />
+    <Resource Include="Assets\Fonts\Weather.ttf" />
+    <Resource Include="Assets\weather\moon.png" />
+    <Resource Include="Assets\weather\moon_blizzard.png" />
+    <Resource Include="Assets\weather\moon_clouds.png" />
+    <Resource Include="Assets\weather\moon_fog.png" />
+    <Resource Include="Assets\weather\moon_lighting.png" />
+    <Resource Include="Assets\weather\moon_rain.png" />
+    <Resource Include="Assets\weather\moon_rain_snow.png" />
+    <Resource Include="Assets\weather\NA_blizzard.png" />
+    <Resource Include="Assets\weather\NA_clouds.png" />
+    <Resource Include="Assets\weather\NA_fog.png" />
+    <Resource Include="Assets\weather\NA_lighting.png" />
+    <Resource Include="Assets\weather\NA_rain.png" />
+    <Resource Include="Assets\weather\NA_rain_snow.png" />
+    <Resource Include="Assets\weather\sun.png" />
+    <Resource Include="Assets\weather\sun_blizzard.png" />
+    <Resource Include="Assets\weather\sun_clouds.png" />
+    <Resource Include="Assets\weather\sun_fog.png" />
+    <Resource Include="Assets\weather\sun_lighting.png" />
+    <Resource Include="Assets\weather\sun_rain.png" />
+    <Resource Include="Assets\weather\sun_rain_snow.png" />
+    <Resource Include="Azan.wav" />
+    <Resource Include="Hour.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\Waves\Azan.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\Waves\Hour.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

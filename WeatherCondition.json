@@ -1,0 +1,133 @@
+{
+  "weather_conditions": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "image": "ms-appx:///Assets/weather/sun.png",
+      "time_of_day": "AM"
+    },
+    {
+      "id": 8001,
+      "main": "Clear",
+      "description": "clear sky",
+      "image": "ms-appx:///Assets/weather/moon.png",
+      "time_of_day": "PM"
+    },
+    {
+      "id": 801,
+      "main": "Clouds",
+      "description": "few clouds",
+      "image": "ms-appx:///Assets/weather/sun_clouds.png",
+      "time_of_day": "AM"
+    },
+    {
+      "id": 8011,
+      "main": "Clouds",
+      "description": "few clouds",
+      "image": "ms-appx:///Assets/weather/moon_clouds.png",
+      "time_of_day": "PM"
+    },
+    {
+      "id": 802,
+      "main": "Clouds",
+      "description": "scattered clouds",
+      "image": "ms-appx:///Assets/weather/sun.png",
+      "time_of_day": "AM"
+    },
+    {
+      "id": 8022,
+      "main": "Clouds",
+      "description": "scattered clouds",
+      "image": "ms-appx:///Assets/weather/moon.png",
+      "time_of_day": "PM"
+    },
+    {
+      "id": 803,
+      "main": "Clouds",
+      "description": "broken clouds",
+      "image": "ms-appx:///Assets/weather/moon.png"
+    },
+    {
+      "id": 8033,
+      "main": "Clouds",
+      "description": "broken clouds",
+      "image": "ms-appx:///Assets/weather/sun.png",
+      "time_of_day": "AM"
+    },
+    {
+      "id": 804,
+      "main": "Clouds",
+      "description": "overcast clouds",
+      "image": "ms-appx:///Assets/weather/sun_clouds.png",
+      "time_of_day": "AM"
+    },
+    {
+      "id": 8044,
+      "main": "Clouds",
+      "description": "overcast clouds",
+      "image": "ms-appx:///Assets/weather/moon_clouds.png",
+      "time_of_day": "PM"
+    },
+    {
+      "id": 500,
+      "main": "Rain",
+      "description": "light rain",
+      "image": "ms-appx:///Assets/weather/NA_rain.png"
+    },
+    {
+      "id": 501,
+      "main": "Rain",
+      "description": "moderate rain",
+      "image": "ms-appx:///Assets/weather/NA_rain.png"
+    },
+    {
+      "id": 502,
+      "main": "Rain",
+      "description": "heavy rain",
+      "image": "ms-appx:///Assets/weather/NA_lighting.png"
+    },
+    {
+      "id": 511,
+      "main": "Rain",
+      "description": "freezing rain",
+      "image": "ms-appx:///Assets/weather/NA_lighting.png"
+    },
+    {
+      "id": 200,
+      "main": "Thunderstorm",
+      "description": "thunderstorm with light rain",
+      "image": "ms-appx:///Assets/weather/NA_lighting.png"
+    },
+    {
+      "id": 600,
+      "main": "Snow",
+      "description": "light snow",
+      "image": "ms-appx:///Assets/weather/NA_rain.png"
+    },
+    {
+      "id": 601,
+      "main": "Snow",
+      "description": "snow",
+      "image": "ms-appx:///Assets/weather/NA_rain.png"
+    },
+    {
+      "id": 701,
+      "main": "Mist",
+      "description": "mist",
+      "image": "ms-appx:///Assets/weather/NA_rain.png"
+    },
+    {
+      "id": 741,
+      "main": "Fog",
+      "description": "fog",
+      "image": "ms-appx:///Assets/weather/NA_rain.png"
+    },
+    {
+      "id": 761,
+      "main": "Ash",
+      "description": "ash",
+      "image": "ms-appx:///Assets/weather/NA_rain.png"
+    }
+  ]
+}
